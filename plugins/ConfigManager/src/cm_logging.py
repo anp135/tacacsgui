@@ -1,7 +1,7 @@
 from src import cm_debug as deb
 from src.Models.CM_Log import CM_Log
 #from alembic import op
-from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Text, DateTime
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Text, DateTime, inspect
 from sqlalchemy.orm import sessionmaker
 import io
 import datetime
@@ -20,8 +20,9 @@ class cm_logging():
         host = parms.get("host", 'host')
         database = parms.get("database", 'database')
         try:
-            self.db = create_engine( 'mysql://{}:{}@{}/{}'.format(uname,passwd,host,database), encoding='utf8' )
-            if not self.db.dialect.has_table(self.db, 'cm_log'):
+            #self.db = create_engine( 'mysql://{}:{}@{}/{}'.format(uname,passwd,host,database), encoding='utf8' )
+            self.db = create_engine( 'mysql+mysqldb://{}:{}@{}/{}?charset=utf8'.format(uname,passwd,host,database) )
+            if not inspect(self.db).has_table('cm_log'):
                 if self.debug: deb.cm_debug.show( marker='debL', message = 'Where is my table?')
                 metadata = MetaData(self.db)
                 # Create a table with the appropriate Columns

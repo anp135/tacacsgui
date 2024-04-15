@@ -24,5 +24,5 @@ class CM_Log(Base):
     message = Column('message', Text(), default='')
 
     def __repr__(self):
-        return "<CM_Log(date='%s', device_id='%s', query='%s', ip='%s', protocol='%s', port='%s', uname_type='%s', uname='%s', path='%s', status='%s', message='%s')>" % (
-                                self.date, self.device_id, self.query, self.ip, self.protocol, self.port, self.uname_type, self.uname, self.path, self.status, self.message)
+        return "<CM_Log(date='%s', device_id='%s', query_id='%s', query_name='%s', ip='%s', protocol='%s', port='%s', uname_type='%s', uname='%s', path='%s', status='%s', message='%s')>" % (
+                                self.date, self.device_id, self.query_id, self.query_name, self.ip, self.protocol, self.port, self.uname_type, self.uname, self.path, self.status, self.message)

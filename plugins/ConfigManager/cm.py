@@ -39,7 +39,7 @@ if args.cron_set:
         print('File not Found!')
         quit()
     with open(args.cron_set, 'r') as stream:
-        cron_loaded = yaml.load(stream)
+        cron_loaded = yaml.safe_load(stream)
     temp_file="/opt/tacacsgui/temp/crontemp"
     git = cron_loaded.get('git', {})
     cm = cron_loaded.get('cm', {})
@@ -113,13 +113,13 @@ try:
             raise ValueError('Configuration File ' + args.test_queries + ' not found!')
         if args.debug: deb.cm_debug.show(message='Open file ' + args.test_queries)
         with open(args.test_queries, 'r') as stream:
-            data_loaded = yaml.load(stream)
+            data_loaded = yaml.safe_load(stream)
         if args.debug: deb.cm_debug.show(message='Go to main script')
     else:
         if not os.path.isfile(args.config):
             raise ValueError('Configuration File ' + args.config + ' not found!')
         with open(args.config, 'r') as stream:
-            data_loaded = yaml.load(stream)
+            data_loaded = yaml.safe_load(stream)
         if not data_loaded:
             raise ValueError('Configuration File is empty!')
 except Exception as e:

@@ -100,7 +100,8 @@ class TACConfigCtrl extends Controller
 		$openLogFile=fopen(TAC_PLUS_PARSING, 'r') or $errorFlag=true;
 		if ($errorFlag) return array('error' => true, 'message' => 'Unable to open '.TAC_PLUS_PARSING.' file! Verify file availability and rights to it', 'errorLine' => 0);
 
-		$parseData=fread($openLogFile, filesize(TAC_PLUS_PARSING));
+		//$parseData=fread($openLogFile, filesize(TAC_PLUS_PARSING));
+		$parseData=file_get_contents(TAC_PLUS_PARSING);
 
 		if (!$parseData)
 		{

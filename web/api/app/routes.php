@@ -172,6 +172,12 @@ $app->post('/tacacs/reports/delete/', 'TACReportsCtrl:postLogDelete');
 $app->get('/tacacs/widget/chart/auth/', 'TACReportsCtrl:getAuthChartData');
 #####################################################
 
+###Tacacs Export Routes#######################################
+$app->get('/export/tacacs/', 'TACExportCtrl:getExport');
+###Tacacs Import Routes#######################################
+$app->post('/import/upload/file/', 'TACImportCtrl:postFile');
+#####################################################
+
 ###APIChecker Routes#######################################
 $app->get('/apicheck/database/', 'APICheckerCtrl:getCheckDatabase');
 $app->get('/apicheck/status/', 'APICheckerCtrl:getApiStatus');
@@ -205,6 +211,8 @@ $app->post('/mavis/ldap/', 'MAVISLDAP:postLDAPParams');
 $app->post('/mavis/ldap/group/search/', 'MAVISLDAP:postLdapSearch');
 $app->get('/mavis/ldap/group/list/', 'MAVISLDAP:getLdapList');
 $app->post('/mavis/ldap/group/bind/', 'MAVISLDAP:postLdapBind');
+$app->get('/mavis/ldap/group/bind/ref/', 'MAVISLDAP:getBindRef');
+$app->post('/mavis/ldap/group/bind/delete/', 'MAVISLDAP:postBindDel');
 $app->post('/mavis/ldap/group/bind/table/', 'MAVISLDAP:postBindTable');
 $app->post('/mavis/ldap/check/', 'MAVISLDAP:postLDAPCheck');
 $app->post('/mavis/ldap/test/', 'MAVISLDAP:postTest');

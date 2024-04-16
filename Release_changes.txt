@@ -1,7 +1,29 @@
 ##############################
+Version_0.9.83 20201205
+	* MAVIS LDAP Improved
+	* Many bugs fixed
+##############################
+Version_0.9.82 20191018
+	* ACL Export/Import
+	* New API user group right - Add/Edit/Delete Object Address
+	* Hide menu items if user does not have rights
+	* LDAP Bind table now with Reference and Action columns
+	* Some bugs fixed
+##############################
+Version_0.9.81 20191011
+	* Device Export/Import
+	* Device Group Export/Import
+	* TACACS User Export/Import
+	* TACACS User Group Export/Import
+	* TACACS User Group can be associated with ACL
+	* Some bugs fixed
+##############################
+Version_0.9.80 20190917
+	* Logging bug fixed
+##############################
 Version_0.9.79 20190912
 	* Added Slave list on Dashboard
-	* Re-builded High Availability feature
+	* New version of High Availability feature
 	* Email notification if Slave or Master down
 	* Upgrade Slaves from Master
 	* Self-test every 5 minutes

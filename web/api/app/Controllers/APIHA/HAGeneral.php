@@ -18,7 +18,7 @@ class HAGeneral extends Controller
   public $psk;
   private $rootpw;
 
-  public function isSlave(){
+  public static function isSlave(){
     $mainFile = '/opt/tgui_data/ha/ha-settings.yaml';
     if ( ! file_exists($mainFile) ) return false;
     $cfg = Yaml::parseFile($mainFile);
@@ -30,9 +30,10 @@ class HAGeneral extends Controller
     $cfg = Yaml::parseFile($mainFile);
     return $cfg['role'] == 1;
   }
-  public function getRole(){
+  public static function getRole(){
     $mainFile = '/opt/tgui_data/ha/ha-settings.yaml';
     if ( ! file_exists($mainFile) ) return 0;
+    //if ( ! file_exists($mainFile) ) return 1;
     $cfg = Yaml::parseFile($mainFile);
     return $cfg['role'];
   }

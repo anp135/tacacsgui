@@ -7,8 +7,9 @@ Old [Installation Script](https://github.com/tacacsgui/tgui_install). fixed for 
 
 The status of project is WIP. Code of project fixed to works on Debian 12 and PHP 8.2, but a lot of crap inside. Must be refactored a bit more that full.
 
+## Copyright
+* [original project's author](https://github.com/tacacsgui/tacacsgui)
+* 2024 Andrey Pazychev <anp135+tgui@ya.ru>, 
 ## License
-
-Copyright 2024 Andrey Pazychev <anp135+tgui@ya.ru>, [original project's author](https://github.com/tacacsgui/tacacsgui)
 
 Licensed under the GPL, Version 3 (the "[License](LICENSE)");
